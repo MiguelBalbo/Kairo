@@ -5,7 +5,7 @@
 
 **Um smart display / painel doméstico reativo, monocromático e leve o suficiente para rodar em tablets Android legados.**
 
-Construído com [SolidJS](https://www.solidjs.com/) sobre a arquitetura [PocketJS](https://github.com) (`@pocketjs/framework`), com suporte nativo desde **Android 2.3 Gingerbread** (via QuickJS + OpenGL ES 2.0) até tablets e desktops modernos.
+Construído com [SolidJS](https://www.solidjs.com/) sobre a arquitetura [PocketJS](https://github.com) (`@pocketjs/framework`).
 
 </div>
 
@@ -17,23 +17,18 @@ Construído com [SolidJS](https://www.solidjs.com/) sobre a arquitetura [PocketJ
 
 <table>
   <tr>
-    <td align="center"><b>Relógio (Home)</b><br/><img src="docs/screenshots/home.png" width="380" alt="Tela inicial com relógio, clima e próximos eventos" /></td>
-    <td align="center"><b>Calendário</b><br/><img src="docs/screenshots/calendar.png" width="380" alt="Grade mensal do calendário" /></td>
+    <td align="center"><b>Relógio (Home)</b><br/><img src="assets/docs/screenshots/home.png" width="380" alt="Tela inicial com relógio, clima e próximos eventos" /></td>
+    <td align="center"><b>Calendário</b><br/><img src="assets/docs/screenshots/calendar.png" width="380" alt="Grade mensal do calendário" /></td>
   </tr>
   <tr>
-    <td align="center"><b>Notas</b><br/><img src="docs/screenshots/notes.png" width="380" alt="Bloco de notas estilo legal pad" /></td>
-    <td align="center"><b>Porta-Retratos</b><br/><img src="docs/screenshots/photoframe.png" width="380" alt="Slideshow de fotos em tela cheia com relógio sobreposto" /></td>
+    <td align="center"><b>Notas</b><br/><img src="assets/docs/screenshots/notes.png" width="380" alt="Bloco de notas estilo legal pad" /></td>
+    <td align="center"><b>Porta-Retratos</b><br/><img src="assets/docs/screenshots/slideshow.png" width="380" alt="Slideshow de fotos em tela cheia com relógio sobreposto" /></td>
   </tr>
   <tr>
-    <td align="center"><b>Contatos</b><br/><img src="docs/screenshots/contacts.png" width="380" alt="Lista e detalhes de contatos" /></td>
-    <td align="center"><b>Configurações</b><br/><img src="docs/screenshots/settings.png" width="380" alt="Configurações em abas: Agenda, Porta-Retratos, Watchfaces, Sistema" /></td>
+    <td align="center"><b>Contatos</b><br/><img src="assets/docs/screenshots/contacts.png" width="380" alt="Lista e detalhes de contatos" /></td>
+    <td align="center"><b>Configurações</b><br/><img src="assets/docs/screenshots/settings.png" width="380" alt="Configurações em abas: Agenda, Porta-Retratos, Watchfaces, Sistema" /></td>
   </tr>
 </table>
-
-<div align="center">
-  <img src="docs/screenshots/dark-mode.png" width="500" alt="Comparação entre tema claro e escuro" /><br/>
-  <sub>Tema claro / escuro automático (adicione um print lado a lado, se quiser)</sub>
-</div>
 
 ---
 
