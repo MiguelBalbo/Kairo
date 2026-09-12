@@ -1,0 +1,22 @@
+{
+  "name": "kairo-pjs",
+  "version": "1.0.0",
+  "description": "PocketJS Responsive Tablet Application",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@pocketjs/framework": "^0.11.0",
+    "phosphor-solid": "^1.1.5",
+    "solid-js": "^1.9.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0",
+    "vite": "^6.0.0",
+    "vite-plugin-solid": "^2.11.0"
+  }
+}

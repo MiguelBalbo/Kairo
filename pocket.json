@@ -1,0 +1,15 @@
+{
+  "name": "kairo-pjs",
+  "version": "1.0.0",
+  "description": "Responsive PocketJS Tablet Application",
+  "window": {
+    "title": "Kairo Tablet App",
+    "width": 1024,
+    "height": 600,
+    "minWidth": 320,
+    "minHeight": 480,
+    "resizable": true,
+    "orientation": "any"
+  },
+  "targets": ["android", "web"]
+}
