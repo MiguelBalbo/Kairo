@@ -1,6 +1,6 @@
 <div align="center">
 
-<img width="256" height="256" alt="kairo_logo" src="assets/kairo_logo.png" /> 
+<img width="256" height="256" alt="kairo_logo" src="assets/kairo_logo.png" /></br> 
 # Kairo PJS 2
 
 **Um smart display / painel doméstico reativo, monocromático e leve o suficiente para rodar em tablets Android legados.**
