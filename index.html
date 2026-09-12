@@ -28,8 +28,11 @@
            já definidos em rem. Controlada via viewport.ts (applyUiScale). */
         --ui-scale: 1;
       }
+      /* Tema segue o sistema por padrão. Configurações > Sistema permite forçar
+         claro/escuro manualmente via o atributo data-theme na raiz (viewport.ts,
+         applyThemeMode) — "auto" remove o atributo e volta a seguir o sistema. */
       @media (prefers-color-scheme: dark) {
-        :root {
+        :root:not([data-theme="light"]) {
           --bg-color: #000000;
           --text-color: #ffffff;
           --surface-color: #1a1a1a;
@@ -39,7 +42,16 @@
           --accent-text: #000000;
         }
       }
-      
+      :root[data-theme="dark"] {
+        --bg-color: #000000;
+        --text-color: #ffffff;
+        --surface-color: #1a1a1a;
+        --card-color: #262626;
+        --border-color: #404040;
+        --accent-color: #ffffff;
+        --accent-text: #000000;
+      }
+
       html {
         font-size: calc(16px * var(--ui-scale));
       }

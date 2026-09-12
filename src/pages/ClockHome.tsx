@@ -312,7 +312,7 @@ export function ClockHome() {
                 upcomingWeekEvents().map((evt) => {
                   const colors = getCategoryColor(evt.category);
                   return (
-                    <div 
+                    <div
                       onClick={() => navigate('calendar')}
                       class="flex items-center justify-between transition-all cursor-pointer select-none"
                       style={{
@@ -322,12 +322,13 @@ export function ClockHome() {
                         "background-color": "var(--card-color)",
                         "border": "1px solid var(--border-color)",
                         "transition": "all 0.15s ease",
-                        "gap": "12px"
+                        "gap": "12px",
+                        "overflow": "hidden"
                       }}
                     >
                       {/* Lado Esquerdo: Badge da Data e Título do Evento */}
-                      <div class="flex items-center gap-3 overflow-hidden flex-1">
-                        <span 
+                      <div class="flex items-center gap-3 overflow-hidden flex-1" style={{ "min-width": "0" }}>
+                        <span
                           style={{
                             "font-size": "0.75rem",
                             "font-weight": "600",
@@ -338,21 +339,22 @@ export function ClockHome() {
                             "border": `1px solid ${colors.border}`,
                             "white-space": "nowrap",
                             "min-width": "64px",
+                            "flex-shrink": "0",
                             "text-align": "center"
                           }}
                         >
                           {formatEventDateLabel(evt.date)}
                         </span>
 
-                        <div class="flex flex-col overflow-hidden">
-                          <span 
+                        <div class="flex flex-col overflow-hidden" style={{ "min-width": "0", "flex": "1" }}>
+                          <span
                             class="font-archivo font-medium truncate"
                             style={{ "font-size": "0.95rem", "letter-spacing": "-0.01em", "color": "var(--text-color)" }}
                           >
                             {evt.title}
                           </span>
                           {evt.description && (
-                            <span 
+                            <span
                               class="text-xs truncate font-light"
                               style={{ "font-size": "0.75rem", "color": "var(--text-color)", "opacity": "0.7" }}
                             >
@@ -363,8 +365,8 @@ export function ClockHome() {
                       </div>
 
                       {/* Lado Direito: Horário e Seta */}
-                      <div class="flex items-center gap-2" style={{ "white-space": "nowrap" }}>
-                        <span 
+                      <div class="flex items-center gap-2" style={{ "white-space": "nowrap", "flex-shrink": "0" }}>
+                        <span
                           class="font-archivo font-light"
                           style={{ "font-size": "0.85rem", "color": "var(--text-color)", "opacity": "0.7" }}
                         >

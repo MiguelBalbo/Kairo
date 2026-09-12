@@ -2,7 +2,7 @@ import { createSignal } from 'solid-js';
 import { Card } from '../components/Card';
 import { Button } from '../components/Button';
 import { WatchfacePreview } from '../components/WatchfacePreview';
-import { viewportWidth, viewportHeight, isTablet, uiScale, applyUiScale } from '../viewport';
+import { viewportWidth, viewportHeight, isTablet, uiScale, applyUiScale, themeMode, applyThemeMode } from '../viewport';
 import {
   folderPath,
   setCustomFolderPath,
@@ -468,10 +468,40 @@ export function SettingsPage() {
           <div
             style={{
               "display": "grid",
-              "grid-template-columns": isTablet() ? "1fr 1fr" : "1fr",
+              "grid-template-columns": isTablet() ? "repeat(3, 1fr)" : "1fr",
               "gap": "14px"
             }}
           >
+            <Card title="Tema">
+              <p class="text-xs text-muted" style={{ "margin-bottom": "12px" }}>
+                Escolha claro ou escuro manualmente, ou deixe automático para seguir o
+                tema do sistema operacional.
+              </p>
+              <div class="flex gap-2 flex-wrap">
+                <Button
+                  variant={themeMode() === 'auto' ? 'primary' : 'secondary'}
+                  size="sm"
+                  onClick={() => applyThemeMode('auto')}
+                >
+                  Automático
+                </Button>
+                <Button
+                  variant={themeMode() === 'light' ? 'primary' : 'secondary'}
+                  size="sm"
+                  onClick={() => applyThemeMode('light')}
+                >
+                  Claro
+                </Button>
+                <Button
+                  variant={themeMode() === 'dark' ? 'primary' : 'secondary'}
+                  size="sm"
+                  onClick={() => applyThemeMode('dark')}
+                >
+                  Escuro
+                </Button>
+              </div>
+            </Card>
+
             <Card title="Orçamento de Memória RAM (Heap QuickJS)">
               <p class="text-xs text-muted" style={{ "margin-bottom": "12px" }}>
                 No Android 2.3 em tablets legados (geralmente com 512 MB de RAM física total),

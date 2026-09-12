@@ -40,6 +40,46 @@ if (typeof document !== 'undefined') {
   document.documentElement.style.setProperty('--ui-scale', String(uiScale()));
 }
 
+export type ThemeMode = 'auto' | 'light' | 'dark';
+
+function loadStoredThemeMode(): ThemeMode {
+  if (typeof window === 'undefined') return 'auto';
+  try {
+    const val = localStorage.getItem('kairo_theme_mode');
+    return val === 'light' || val === 'dark' ? val : 'auto';
+  } catch {
+    return 'auto';
+  }
+}
+
+export const [themeMode, setThemeMode] = createSignal<ThemeMode>(loadStoredThemeMode());
+
+// Modo claro/escuro (Configurações > Sistema). "auto" remove o atributo e volta a
+// seguir @media (prefers-color-scheme) em index.html; "light"/"dark" força o tema
+// via o atributo data-theme na raiz, independente do sistema.
+export function applyThemeMode(mode: ThemeMode) {
+  setThemeMode(mode);
+  if (typeof document !== 'undefined') {
+    if (mode === 'auto') {
+      document.documentElement.removeAttribute('data-theme');
+    } else {
+      document.documentElement.setAttribute('data-theme', mode);
+    }
+  }
+  if (typeof window !== 'undefined') {
+    try {
+      localStorage.setItem('kairo_theme_mode', mode);
+    } catch (e) {
+      console.warn('Erro ao salvar modo de tema:', e);
+    }
+  }
+}
+
+// Aplica o modo salvo assim que o módulo carrega, para restaurar a preferência a cada boot.
+if (typeof document !== 'undefined' && themeMode() !== 'auto') {
+  document.documentElement.setAttribute('data-theme', themeMode());
+}
+
 export function isTablet(): boolean {
   // Dispositivos ou telas com largura >= 640px ou landscape com boa área
   return viewportWidth() >= 640;
